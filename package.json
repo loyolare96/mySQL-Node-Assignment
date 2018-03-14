@@ -1,0 +1,23 @@
+{
+  "name": "mysql-node-assignment",
+  "version": "1.0.0",
+  "description": "3-16 Homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loyolare96/mySQL-Node-Assignment.git"
+  },
+  "author": "Regan Loyola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loyolare96/mySQL-Node-Assignment/issues"
+  },
+  "homepage": "https://github.com/loyolare96/mySQL-Node-Assignment#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0"
+  }
+}
