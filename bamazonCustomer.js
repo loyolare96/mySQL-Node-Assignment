@@ -30,9 +30,7 @@ function browseProducts() {
         for (i = 0; i < res.length; i++) {
             console.log("Item ID: " + res[i].item_id);
             console.log("Product name: " + res[i].product_name);
-            console.log("Department: " + res[i].department_name);
             console.log("Price: " + res[i].price);
-            console.log("Current stock: " + res[i].stock_quantity);
             console.log("------------------------");
         }
         inquirer.prompt([
@@ -43,8 +41,6 @@ function browseProducts() {
             }
         ])
             .then(answers => {
-                console.log(validVariable)
-                console.log(answers.itemIDAnswer);
                 for (j = 0; j < res.length; j++) {
                     if (answers.itemIDAnswer == res[j].item_id) {
                         console.log("Purchasing: " + res[j].product_name);
@@ -91,15 +87,15 @@ function quantityInterrogate(input) {
         }
     ])
         .then(quantityAnswers => {
-            console.log("You have requested " + quantityAnswers.quantityInput + " for " + input.product_name);
-            console.log(input.stock_quantity);
             switch (true) {
                 case (quantityAnswers.quantityInput > input.stock_quantity):
-                    return console.log("Unfortunately, we do not have enough in stock.");
+                    console.log("Unfortunately, we do not have enough in stock.");
+                    return console.log("Your total comes to $0, because you didn't get to buy anything. :^)")
                 case (quantityAnswers.quantityInput <= input.stock_quantity):
                     console.log("You're in luck! We have enough in stock.");
                     var quantityResult = input.stock_quantity - quantityAnswers.quantityInput;
-                    return subtractQuantity(quantityResult, input.product_name)
+                    subtractQuantity(quantityResult, input.product_name);
+                    return console.log("Your total comes to : $" + input.price);
                 default:
                     return console.log("Please enter a valid response.");
             }
