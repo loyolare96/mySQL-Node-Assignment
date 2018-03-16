@@ -90,13 +90,13 @@ function quantityInterrogate(input) {
             switch (true) {
                 case (quantityAnswers.quantityInput > input.stock_quantity):
                     console.log("Unfortunately, we do not have enough in stock.");
-                    return console.log("Your total comes to $0, because you didn't get to buy anything. :^)")
+                    return console.log("Your total comes to $0, because you didn't get to buy anything.")
                 case (quantityAnswers.quantityInput <= input.stock_quantity):
                     console.log("You're in luck! We have enough in stock.");
                     var quantityResult = input.stock_quantity - quantityAnswers.quantityInput;
                     subtractQuantity(quantityResult, input.product_name);
                     var calculatedPrice = parseInt(input.price) * parseInt(quantityAnswers.quantityInput)
-                    return console.log("Your total comes to : $" + calculatedPrice);
+                    return console.log("Your total comes to: $" + calculatedPrice);
                 default:
                     return console.log("Please enter a valid response.");
             }

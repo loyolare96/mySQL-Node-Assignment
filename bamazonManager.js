@@ -122,7 +122,7 @@ function managerAddInventory() {
                 }
 
                 var adding = parseInt(chosenQuantity) + parseInt(addAnswers.addInteger);
-                console.log(adding);
+                console.log("Setting " + chosenName + "'s stock to: " + adding);
                 connection2.query("UPDATE products SET stock_quantity =" + adding + " WHERE product_name = '" + chosenName + "'", function (err, res2) {
                     if (err) throw err;
                     console.log(res2.affectedRows + " record(s) updated");
